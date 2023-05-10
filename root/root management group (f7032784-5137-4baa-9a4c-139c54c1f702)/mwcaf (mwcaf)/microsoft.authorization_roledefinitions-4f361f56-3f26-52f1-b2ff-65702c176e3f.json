@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "4f361f56-3f26-52f1-b2ff-65702c176e3f",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "assignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/mwcaf"
+        ],
+        "description": "Security Administrator role with a horizontal view across the entire Azure estate and the Azure Key Vault purge policy.",
+        "permissions": [
+          {
+            "actions": [
+              "*/read",
+              "*/register/action",
+              "Microsoft.KeyVault/locations/deletedVaults/purge/action",
+              "Microsoft.PolicyInsights/*",
+              "Microsoft.Authorization/policyAssignments/*",
+              "Microsoft.Authorization/policyDefinitions/*",
+              "Microsoft.Authorization/policyExemptions/*",
+              "Microsoft.Authorization/policySetDefinitions/*",
+              "Microsoft.Insights/alertRules/*",
+              "Microsoft.Resources/deployments/*",
+              "Microsoft.Security/*",
+              "Microsoft.Support/*"
+            ],
+            "dataActions": [],
+            "notActions": [],
+            "notDataActions": []
+          }
+        ],
+        "roleName": "[mwcaf] Security-Operations",
+        "type": "CustomRole"
+      }
+    }
+  ],
+  "outputs": {}
+}

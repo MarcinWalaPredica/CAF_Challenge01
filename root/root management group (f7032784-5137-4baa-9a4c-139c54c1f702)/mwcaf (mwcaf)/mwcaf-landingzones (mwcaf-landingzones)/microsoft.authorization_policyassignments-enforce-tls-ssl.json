@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Enforce-TLS-SSL",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "5153457f-00c5-46fe-a49c-d90a34dbfc81",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Choose either Deploy if not exist and append in combination with audit or Select Deny in the Policy effect. Deny polices shift left. Deploy if not exist and append enforce but can be changed, and because missing existence condition require then the combination of Audit.",
+        "displayName": "Deny or Deploy and append TLS requirements and SSL enforcement on resources without Encryption in transit",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "TLS and SSL must be enabled for on resources without encryption in transit."
+          }
+        ],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mwcaf/providers/Microsoft.Authorization/policySetDefinitions/Enforce-EncryptTransit",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}
