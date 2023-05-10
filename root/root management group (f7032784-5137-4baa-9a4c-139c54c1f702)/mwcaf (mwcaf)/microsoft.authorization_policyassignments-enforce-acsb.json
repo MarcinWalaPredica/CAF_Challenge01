@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Enforce-ACSB",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "8923a7ca-a49e-4815-b41f-fbb7a60a60ba",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "This initiative assignment enables Azure Compute Security Baseline compliance auditing for Windows and Linux virtual machines.",
+        "displayName": "Enforce Azure Compute Security Baseline compliance auditing",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "Azure Compute Security Baseline compliance auditing must be enforced."
+          }
+        ],
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mwcaf/providers/Microsoft.Authorization/policySetDefinitions/Enforce-ACSB",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}

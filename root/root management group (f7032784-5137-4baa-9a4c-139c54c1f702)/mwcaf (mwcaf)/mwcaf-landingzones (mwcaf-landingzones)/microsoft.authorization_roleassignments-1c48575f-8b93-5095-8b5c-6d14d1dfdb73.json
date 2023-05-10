@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "1c48575f-8b93-5095-8b5c-6d14d1dfdb73",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "principalId": "d4b9730c-7095-4f9b-8d13-4486f8324cf1",
+        "principalType": "ServicePrincipal",
+        "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/ed7f3fbd-7b88-4dd4-9017-9adb7ce333f8",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

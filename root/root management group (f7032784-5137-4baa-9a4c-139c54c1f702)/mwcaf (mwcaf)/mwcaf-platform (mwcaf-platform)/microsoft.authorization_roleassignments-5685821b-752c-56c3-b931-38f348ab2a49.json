@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "5685821b-752c-56c3-b931-38f348ab2a49",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "principalId": "88dd63a7-964f-4699-9167-ac05f0a74c28",
+        "principalType": "ServicePrincipal",
+        "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf-platform"
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "327d9568-5cb9-5b54-9703-e33c3e41c38d",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "assignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/mwcaf"
+        ],
+        "description": "Platform-wide global connectivity management: virtual networks, UDRs, NSGs, NVAs, VPN, Azure ExpressRoute, and others",
+        "permissions": [
+          {
+            "actions": [
+              "*/read",
+              "Microsoft.Network/*",
+              "Microsoft.Resources/deployments/*",
+              "Microsoft.Support/*"
+            ],
+            "dataActions": [],
+            "notActions": [],
+            "notDataActions": []
+          }
+        ],
+        "roleName": "[mwcaf] Network-Management",
+        "type": "CustomRole"
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-MDEndpoints",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "24408906-6240-481e-9b12-293787887e8c",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Deploy Microsoft Defender for Endpoint agent on applicable images.",
+        "displayName": "[Preview]: Deploy Microsoft Defender for Endpoint agent",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "Microsoft Defender for Endpoint agent must be deployed on applicable images."
+          }
+        ],
+        "parameters": {
+          "microsoftDefenderForEndpointLinuxArcAgentDeployEffect": {
+            "value": "DeployIfNotExists"
+          },
+          "microsoftDefenderForEndpointLinuxVmAgentDeployEffect": {
+            "value": "DeployIfNotExists"
+          },
+          "microsoftDefenderForEndpointWindowsArcAgentDeployEffect": {
+            "value": "DeployIfNotExists"
+          },
+          "microsoftDefenderForEndpointWindowsVmAgentDeployEffect": {
+            "value": "DeployIfNotExists"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/e20d08c5-6d64-656d-6465-ce9e37fd0ebc",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}

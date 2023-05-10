@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-MDFC-SqlAtp",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "74bf271e-1553-4e09-be9e-7045189e788e",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Enable Azure Defender on your SQL Servers and SQL Managed Instances to detect anomalous activities indicating unusual and potentially harmful attempts to access or exploit databases.",
+        "displayName": "Configure Azure Defender to be enabled on SQL Servers and SQL Managed Instances",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "Azure Defender must be enabled on SQL Servers and SQL Managed Instances."
+          }
+        ],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/9cb3cc7a-b39b-4b82-bc89-e5a5d9ff7b97",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}

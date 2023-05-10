@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "4c22859b-8314-500a-9275-51165971864d",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "assignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/mwcaf"
+        ],
+        "description": "Contributor role granted for application/operations team at resource group level",
+        "permissions": [
+          {
+            "actions": [
+              "*"
+            ],
+            "dataActions": [],
+            "notActions": [
+              "Microsoft.Authorization/*/write",
+              "Microsoft.Network/publicIPAddresses/write",
+              "Microsoft.Network/virtualNetworks/write",
+              "Microsoft.KeyVault/locations/deletedVaults/purge/action"
+            ],
+            "notDataActions": []
+          }
+        ],
+        "roleName": "[mwcaf] Application-Owners",
+        "type": "CustomRole"
+      }
+    }
+  ],
+  "outputs": {}
+}

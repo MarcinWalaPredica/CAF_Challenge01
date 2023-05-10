@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-MDFC-Config",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "7c6366bc-70b7-47ea-b29c-627b89fc37bf",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "description": "Deploy Microsoft Defender for Cloud and Security Contacts",
+        "displayName": "Deploy Microsoft Defender for Cloud configuration",
+        "enforcementMode": "Default",
+        "metadata": {},
+        "nonComplianceMessages": [
+          {
+            "message": "Microsoft Defender for Cloud and Security Contacts must be deployed."
+          }
+        ],
+        "parameters": {
+          "ascExportResourceGroupLocation": {
+            "value": "westeurope"
+          },
+          "ascExportResourceGroupName": {
+            "value": "mwcaf-asc-export"
+          },
+          "emailSecurityContact": {
+            "value": "marcin.wala@predicagroup.com"
+          },
+          "enableAscForApis": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForAppServices": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForArm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForContainers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForCosmosDbs": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForCspm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForDns": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForKeyVault": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForOssDb": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForServers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForServersVulnerabilityAssessments": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSql": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSqlOnVm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForStorage": {
+            "value": "DeployIfNotExists"
+          },
+          "logAnalytics": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourceGroups/mwcaf-mgmt/providers/Microsoft.OperationalInsights/workspaces/mwcaf-law"
+          },
+          "vulnerabilityAssessmentProvider": {
+            "value": "default"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mwcaf/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config",
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}
