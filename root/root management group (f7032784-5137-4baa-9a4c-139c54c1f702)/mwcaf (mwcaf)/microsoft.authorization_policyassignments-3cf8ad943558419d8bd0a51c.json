@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "3cf8ad943558419d8bd0a51c",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "c0042020-d3c1-4678-ba61-7534482b8358",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "displayName": "BACKUPChallenge_DeployIfNotExist",
+        "enforcementMode": "Default",
+        "metadata": {
+          "parameterScopes": {
+            "backupPolicyId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourcegroups/mwcaf-mgmt/providers/microsoft.recoveryservices/vaults/mwcaf-backup-vault-01",
+            "vaultLocation": "/providers/Microsoft.Management/managementGroups/mwcaf"
+          }
+        },
+        "nonComplianceMessages": [
+          {
+            "message": "This VM needs to have backup configured."
+          }
+        ],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {
+          "backupPolicyId": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourcegroups/mwcaf-mgmt/providers/microsoft.recoveryservices/vaults/mwcaf-backup-vault-01/backuppolicies/defaultpolicy"
+          },
+          "exclusionTagName": {
+            "value": "BackupChallenge"
+          },
+          "exclusionTagValue": {
+            "value": [
+              "NotNeeded"
+            ]
+          },
+          "vaultLocation": {
+            "value": "westeurope"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
+        "resourceSelectors": [],
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}
