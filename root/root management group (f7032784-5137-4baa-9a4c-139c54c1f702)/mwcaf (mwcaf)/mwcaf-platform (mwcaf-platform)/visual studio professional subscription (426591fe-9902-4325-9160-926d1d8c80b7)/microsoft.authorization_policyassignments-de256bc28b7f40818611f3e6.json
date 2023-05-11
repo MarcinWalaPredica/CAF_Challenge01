@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "de256bc28b7f40818611f3e6",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "86b05995-f11b-40cc-a0c7-0c15e7d9d1ec",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "displayName": "DRChallenge_Enforce",
+        "enforcementMode": "Default",
+        "metadata": {
+          "parameterScopes": {
+            "cacheStorageAccountId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "recoveryNetworkId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "sourceRegion": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "targetRegion": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "targetResourceGroupId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "targetZone": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "vaultId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7",
+            "vaultResourceGroupId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7"
+          }
+        },
+        "nonComplianceMessages": [
+          {
+            "message": "This should have been DR enrolled. Dude."
+          }
+        ],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {
+          "cacheStorageAccountId": {
+            "value": "qfr2nrasr"
+          },
+          "recoveryNetworkId": {
+            "value": "RecoveryTarget-RSG-vnet-asr"
+          },
+          "sourceRegion": {
+            "value": "westeurope"
+          },
+          "targetRegion": {
+            "value": "northeurope"
+          },
+          "targetResourceGroupId": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourceGroups/RecoveryTarget-RSG"
+          },
+          "targetZone": {},
+          "vaultId": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourceGroups/RecoveryTarget-RSG/providers/Microsoft.RecoveryServices/vaults/mwcaf-RecoveryVault"
+          },
+          "vaultResourceGroupId": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourceGroups/RecoveryTarget-RSG"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ac34a73f-9fa5-4067-9247-a3ecae514468",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7"
+      }
+    }
+  ],
+  "outputs": {}
+}

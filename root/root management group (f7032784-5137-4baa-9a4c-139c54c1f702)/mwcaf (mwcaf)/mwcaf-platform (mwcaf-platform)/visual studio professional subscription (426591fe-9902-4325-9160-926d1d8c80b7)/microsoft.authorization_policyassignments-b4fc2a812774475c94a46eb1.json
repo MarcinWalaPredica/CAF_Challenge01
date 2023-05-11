@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "b4fc2a812774475c94a46eb1",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "3dd995c9-f6eb-44ac-b74d-59cbb13d1f6f",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "displayName": "SQL_Backup Challenge Assignment",
+        "enforcementMode": "Default",
+        "metadata": {
+          "parameterScopes": {}
+        },
+        "nonComplianceMessages": [
+          {
+            "message": "Backups, dude."
+          }
+        ],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mwcaf/providers/Microsoft.Authorization/policyDefinitions/b7844a9f-b6ef-4e9a-840c-c42d171aa744",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7"
+      }
+    }
+  ],
+  "outputs": {}
+}
