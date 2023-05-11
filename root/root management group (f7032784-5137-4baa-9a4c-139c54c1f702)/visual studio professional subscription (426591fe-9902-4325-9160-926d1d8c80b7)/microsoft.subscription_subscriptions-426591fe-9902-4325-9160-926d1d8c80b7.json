@@ -11,7 +11,7 @@
   "resources": [
     {
       "type": "Microsoft.Management/managementGroups/subscriptions",
-      "name": "mwcaf-platform/426591fe-9902-4325-9160-926d1d8c80b7",
+      "name": "f7032784-5137-4baa-9a4c-139c54c1f702/426591fe-9902-4325-9160-926d1d8c80b7",
       "apiVersion": "2021-04-01",
       "scope": "/"
     }
