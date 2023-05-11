@@ -34,7 +34,9 @@
             "message": "This VM needs to have backup configured."
           }
         ],
-        "notScopes": [],
+        "notScopes": [
+          "/providers/Microsoft.Management/managementGroups/mwcaf-sandboxes"
+        ],
         "overrides": [],
         "parameters": {
           "backupPolicyId": {
