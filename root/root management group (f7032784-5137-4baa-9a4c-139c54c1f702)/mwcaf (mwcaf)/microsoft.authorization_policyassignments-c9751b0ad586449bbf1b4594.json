@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "c9751b0ad586449bbf1b4594",
+      "kind": "policyassignments",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "principalId": "72d62332-a10b-4f56-ab42-0c31a62b2cde",
+        "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "displayName": "BackupChallenge_AuditifNotExist",
+        "enforcementMode": "Default",
+        "metadata": {
+          "parameterScopes": {
+            "backupPolicyId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourcegroups/mwcaf-mgmt/providers/microsoft.recoveryservices/vaults/mwcaf-backup-vault-01",
+            "vaultLocation": "/providers/Microsoft.Management/managementGroups/mwcaf"
+          }
+        },
+        "nonComplianceMessages": [
+          {
+            "message": "This VM does not have backup confiured. And it should. Ya knob."
+          }
+        ],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {
+          "backupPolicyId": {
+            "value": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourcegroups/mwcaf-mgmt/providers/microsoft.recoveryservices/vaults/mwcaf-backup-vault-01/backuppolicies/defaultpolicy"
+          },
+          "effect": {
+            "value": "auditIfNotExists"
+          },
+          "exclusionTagName": {
+            "value": "BackupChallenge"
+          },
+          "exclusionTagValue": {
+            "value": [
+              "NotNeeded"
+            ]
+          },
+          "vaultLocation": {
+            "value": "westeurope"
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
+        "resourceSelectors": [],
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+      }
+    }
+  ],
+  "outputs": {}
+}
