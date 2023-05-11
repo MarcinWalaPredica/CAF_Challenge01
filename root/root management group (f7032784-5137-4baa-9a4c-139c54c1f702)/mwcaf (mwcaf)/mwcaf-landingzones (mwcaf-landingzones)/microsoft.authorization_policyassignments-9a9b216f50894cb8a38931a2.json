@@ -11,22 +11,22 @@
   "resources": [
     {
       "type": "Microsoft.Authorization/policyAssignments",
-      "name": "c9751b0ad586449bbf1b4594",
+      "name": "9a9b216f50894cb8a38931a2",
       "kind": "policyassignments",
       "apiVersion": "2022-06-01",
       "location": "westeurope",
       "identity": {
-        "principalId": "72d62332-a10b-4f56-ab42-0c31a62b2cde",
+        "principalId": "b3722365-3c73-4038-8a51-1bfc4f36d3ed",
         "tenantId": "f7032784-5137-4baa-9a4c-139c54c1f702",
         "type": "SystemAssigned"
       },
       "properties": {
-        "displayName": "BackupChallenge_AuditifNotExist",
+        "displayName": "BackupChallenge_AuditifNotExist_LandingZones",
         "enforcementMode": "Default",
         "metadata": {
           "parameterScopes": {
             "backupPolicyId": "/subscriptions/426591fe-9902-4325-9160-926d1d8c80b7/resourcegroups/mwcaf-mgmt/providers/microsoft.recoveryservices/vaults/mwcaf-backup-vault-01",
-            "vaultLocation": "/providers/Microsoft.Management/managementGroups/mwcaf"
+            "vaultLocation": "/providers/Microsoft.Management/managementGroups/mwcaf-landingzones"
           }
         },
         "nonComplianceMessages": [
@@ -34,9 +34,7 @@
             "message": "This VM does not have backup confiured. And it should. Ya knob."
           }
         ],
-        "notScopes": [
-          "/providers/Microsoft.Management/managementGroups/mwcaf-sandboxes"
-        ],
+        "notScopes": [],
         "overrides": [],
         "parameters": {
           "backupPolicyId": {
@@ -59,7 +57,7 @@
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09ce66bc-1220-4153-8104-e3f51c936913",
         "resourceSelectors": [],
-        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf"
+        "scope": "/providers/Microsoft.Management/managementGroups/mwcaf-landingzones"
       }
     }
   ],
